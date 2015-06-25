@@ -1,3 +1,5 @@
+# robertcsmith/docker-ubuntu_14.0.4
+
 FROM ubuntu:14.04
 MAINTAINER Robert C Smith robert@robertcsmith.consulting
 
@@ -10,21 +12,20 @@ ENV LC_ALL en_US.UTF-8
 RUN dpkg-divert --local --rename --add /sbin/initctl
 RUN ln -sf /bin/true /sbin/initctl
 
-# add git repo, update repo lists and upgrade apt
-RUN add-apt-repository -y ppa:git-core/ppa
-RUN apt-get update
-RUN apt-get -y dist-upgrade
+# update apt-get and perform a dist upgrade
+RUN apt-get update && \
+    apt-get -y dist-upgrade
 
 # install universally common tools
 RUN apt-get install -y \
     software-properties-common \
     libreadline6-dev \
     libreadline6 \
-    git-core \
     unzip \
     sudo \
     curl \
     wget \
+    git \
     zip
 
 # clean up apt, temp files etc. for smallest base img
