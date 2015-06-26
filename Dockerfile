@@ -1,6 +1,6 @@
-# robertcsmith/docker-ubuntu_14.0.4
+# robertcsmith/docker-ubuntu-upstart_14.0.4
 
-FROM ubuntu:14.04
+FROM ubuntu-upstart:14.04
 MAINTAINER Robert C Smith robert@robertcsmith.consulting
 
 # ensure UTF-8
