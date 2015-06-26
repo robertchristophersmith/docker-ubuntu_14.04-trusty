@@ -1,4 +1,4 @@
-Repository for building the base image robertchristophersmith/docker-ubuntu_14.04
+Repository for building base image robertchristophersmith/docker-ubuntu-upstart_14.04
 =================
 
 Modified Ubuntu 14.04 LTS 'Trusty' with essential libraries and packages pre-installed for Docker images/containers extending this base. 
