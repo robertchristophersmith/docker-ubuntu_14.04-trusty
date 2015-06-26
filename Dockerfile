@@ -1,16 +1,12 @@
-# robertcsmith/docker-ubuntu-upstart_14.0.4
+# robertcsmith/docker-ubuntu_14.0.4
 
-FROM ubuntu-upstart:14.04
+FROM ubuntu:14.04
 MAINTAINER Robert C Smith robert@robertcsmith.consulting
 
 # ensure UTF-8
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
-
-# surpress Upstart errors/warning
-RUN dpkg-divert --local --rename --add /sbin/initctl
-RUN ln -sf /bin/true /sbin/initctl
 
 # update apt-get and perform a dist upgrade
 RUN apt-get update && \
